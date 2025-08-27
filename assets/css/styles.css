@@ -1,0 +1,75 @@
+:root {
+  --brand-orange: #ff7a00;
+  --brand-yellow: #ffd400;
+}
+
+body { background-color: #fafafa; }
+
+.brand-black { color: #000; }
+.brand-orange { color: var(--brand-orange); }
+
+.navbar .nav-link.hover-underline { position: relative; }
+.navbar .nav-link.hover-underline::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: -4px;
+  width: 0; height: 2px;
+  background: var(--brand-orange);
+  transition: width .2s ease-in-out;
+}
+.navbar .nav-link.hover-underline:hover::after { width: 100%; }
+
+.avatar-circle {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: #f1f1f1;
+  display: grid; place-items: center;
+  border: 1px solid #ddd;
+}
+
+.hero-swiper { height: 360px; }
+.hero-swiper .swiper-slide img { height: 360px; object-fit: cover; }
+
+.feature-card {
+  background: #fff; border: 1px solid #eee;
+  transition: transform .2s, box-shadow .2s, background-color .2s;
+}
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0,0,0,.08);
+  background-color: #fffef3;
+}
+
+.hover-font-change { transition: font-family .2s ease; }
+.hover-font-change:hover { font-family: 'Courier New', Courier, monospace; }
+
+.promo-tile {
+  height: 260px;
+  box-shadow: 0 0 0 rgba(0,0,0,0);
+  transition: transform .2s, box-shadow .2s, filter .2s;
+}
+.promo-tile:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0,0,0,.12);
+  filter: saturate(1.1);
+}
+
+.product-card {
+  border: 1px solid #eee; background: #fff; border-radius: 1rem;
+  overflow: hidden;
+  transition: box-shadow .2s, transform .2s, background-color .2s;
+}
+.product-card .top-strip { height: 6px; background: #eee; transition: background .2s; }
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0,0,0,.08);
+  background-color: #fffef3;
+}
+.product-card:hover .top-strip { background: var(--brand-yellow); }
+.product-card img { height: 180px; object-fit: cover; }
+
+.custom-footer { background: #111; color: #eee; }
+.custom-footer a { color: #eee; }
+.custom-footer a:hover { color: var(--brand-orange); }
+
+.custom-navbar { border-bottom: 1px solid #eee; }
